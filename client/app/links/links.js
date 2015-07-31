@@ -1,5 +1,10 @@
 angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
-  // Your code here
+  $scope.data = [];
+
+  Links.getLinks().then(function(linkArray) {
+    $scope.data = linkArray;
+    console.log("Links.getLinks: ", $scope.data);
+  });
 });

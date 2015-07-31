@@ -1,3 +1,8 @@
 <div id='container'>
-  <!-- Your html here -->
+  <!-- filter input
+    list of links -->
+  <input class="filter" placeholder="Filter" ng-model="linkFilter">
+  <ul> 
+    <li ng-repeat="link in data">{{ link.title }}</li>
+  </ul>
 </div>
