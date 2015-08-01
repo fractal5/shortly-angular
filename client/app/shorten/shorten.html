@@ -7,11 +7,26 @@
   </nav>
 <!-- Your code here -->
   <!-- <form name='urlForm' ng-submit="submitForm(urlForm.$valid)" novalidate> -->
+  <!--
+  <form name="myForm" ng-controller="ExampleController">
+  <label>URL:
+    <input type="url" name="input" ng-model="url.text" required>
+  <label>
+  <div role="alert">
+    <span class="error" ng-show="myForm.input.$error.required">
+      Required!</span>
+    <span class="error" ng-show="myForm.input.$error.url">
+      Not valid url!</span>
+  </div>
+  -->
   <form name='urlForm' novalidate>
     <div ng-class="{ 'has-error' : urlForm.urlInput.$invalid && !urlForm.urlInput.$pristine }">
       <label>URL*</label>
     <!-- <input placeholder="url" ng-model="data.url" name="urlInput" ng-pattern="rValid"> -->
+    <!--
       <input type="text" placeholder="url" name="urlInput" ng-model="data.url" ng-pattern="/^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i" required>
+    -->
+      <input type="url" placeholder="url" name="urlInput" ng-model="data.url" required>
       <p ng-show="urlForm.urlInput.$invalid && !urlForm.urlInput.$pristine" class="help-block">Valid URL is required.</p>
     </div>
     <!-- <button type="submit" ng-disabled="urlForm.$invalid">Shorten</button> -->
