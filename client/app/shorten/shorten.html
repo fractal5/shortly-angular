@@ -6,8 +6,19 @@
     </ul>
   </nav>
 <!-- Your code here -->
-  <input placeholder="url" ng-model="data.url" >
-  <button ng-click="submit()">Shorten</button>
+  <!-- <form name='urlForm' ng-submit="submitForm(urlForm.$valid)" novalidate> -->
+  <form name='urlForm' novalidate>
+    <div ng-class="{ 'has-error' : urlForm.urlInput.$invalid && !urlForm.urlInput.$pristine }">
+      <label>URL*</label>
+    <!-- <input placeholder="url" ng-model="data.url" name="urlInput" ng-pattern="rValid"> -->
+      <input type="text" placeholder="url" name="urlInput" ng-model="data.url" ng-pattern="/^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i" required>
+      <p ng-show="urlForm.urlInput.$invalid && !urlForm.urlInput.$pristine" class="help-block">Valid URL is required.</p>
+    </div>
+    <!-- <button type="submit" ng-disabled="urlForm.$invalid">Shorten</button> -->
+    <button type="submit" ng-disabled="urlForm.$invalid" ng-click="submit()">Shorten</button>
+    <!-- <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button> -->
+  </form>
+  <!-- <p>Valid Input: {{ urlForm.urlInput.$valid }}</p> -->
 </div>
 
 
