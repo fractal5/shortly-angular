@@ -58,6 +58,7 @@ h1 {
   margin-bottom: 5px;
   padding: 5px;
   min-height: 50px;
+  list-style: none;
 }
 
 .link:hover {
